@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+<div>
+    <h1>Автомобили</h1>               <!--заголовок-->
+    <table>                   <!--вывод в виде таблицы, контейнер тегов таблицы-->
+        <tread>
+        <tr>                            <!--контейнер для создания строки таблицы-->
+            <th>Бренд</th>                   <!-- заголовочная ячейка (заголовки столбцов или строк)-->
+            <th>Модель</th>
+            <th>Привод</th>
+        </tr>               <!-- через / заканчиваем-->
+        </tread>
+        <tr>
+        <tr th:each="car :${cars}">                      <!-- атрибут для итеративного обхода-->
+            <td th:text="${car.getBrand()}"></td>     <!-- подстановка значений полей через геттеры-->
+            <td th:text="${car.getModel()}"></td>
+            <td th:text="${car.getDrive()}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
